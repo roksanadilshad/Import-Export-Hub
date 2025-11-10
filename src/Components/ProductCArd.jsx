@@ -5,11 +5,11 @@ import { FiHeart, FiShoppingCart } from 'react-icons/fi';
 import { Link } from 'react-router';
 
 const ProductCard = ({products}) => {
-    //console.log(products);
+      //console.log(products);
 
     const {productImage,
         productName
-, id,
+, _id,
         price,
         originCountry, 
         rating,
@@ -49,7 +49,7 @@ const ProductCard = ({products}) => {
         </span>
     
     <div className="card-actions justify-end">
-      <Link to={`/productDetails/${id}`} className="btn border-white btn-secondary w-full">See Details</Link>
+      <Link to={`/productDetails/${_id}`} className="btn border-white btn-secondary w-full">See Details</Link>
     </div>
   </div>
 </div>
