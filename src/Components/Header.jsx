@@ -1,9 +1,10 @@
-import React, { use, useContext } from 'react';
+import React, { use} from 'react';
 import { Link, Navigate, NavLink } from 'react-router';
 import { AuthContext } from '../Context/AuthContext';
+import { FaLock } from 'react-icons/fa';
 
 const Header = () => {
-    const {user, signOutUser} = useContext(AuthContext);
+    const {user, signOutUser} = use(AuthContext);
     //console.log(user);
     
     const handleSignout = () =>{
@@ -13,15 +14,17 @@ const Header = () => {
     }
     const links = <>
     <li><NavLink to='/'>Home</NavLink></li>
-    <li><NavLink to='/service'>Service</NavLink></li>
-    <li><NavLink to='/profile'>My Profile</NavLink></li>
+    <li><NavLink to='/service'>All Products</NavLink></li>
+    <li><NavLink to='/profile'>My Exports</NavLink></li>
+    <li><NavLink to='/profile'>My Imports</NavLink></li>
+    <li><NavLink to='/profile'>Add Export routes</NavLink></li>
     </>
     return (
-        <div className=" bg-gradient-to-r from-[#FFF8E7] to-[#FFB347] lg:px-20 mx-auto navbar shadow-sm">
-  <div className="navbar-start">
+        <div className=" bg-[#8FABD4] lg:px-20  navbar shadow-sm flex justify-between items-center">
+  <div className="flex justify-between items-center">
     <div className="dropdown">
        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
             </svg>
           </div>
@@ -31,24 +34,31 @@ const Header = () => {
        {links}
       </ul>
     </div>
+   <div>
+    
+   </div>
     <Link to='/'>
-   <img src="https://templates.sparklethings.com/opet/wp-content/uploads/sites/133/2025/10/logo-opet.png" alt=""  className='w-20 h-12'/>
+     <div className='flex justify-center items-center'>
+      
+   <img src="https://i.ibb.co.com/QvWc04mY/t-removebg-preview.png" alt=""  className='w-15 '/>
+   <h3 className='font-bold text-xl lg:text-2xl text-[#EFECE3]'>Import Export <span className='text-[#4A70A9]'>Hub</span></h3>
+    </div>
     </Link>
-  </div>
-  <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
+  <div className="justify-center items-center hidden lg:flex">
+    <ul className="menu menu-horizontal px-1 text-primary font-semibold">
       {links}
     </ul>
   </div>
-  <div className="navbar-end">
+  </div>
+  <div className="">
     {
         user ? 
         (<>
         <a href='/profile' className=""><img src={user?.photoURL || 'https://images.unsplash.com/photo-1747592771443-e15f155b1faf?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyN3x8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=60&w=500'} className='lg:w-12 lg:h-12 w-10 h-10 rounded-full' title={user.displayName} /></a>
         <button onClick={handleSignout} className='btn btn-success border-[#B4C408] text-white ml-2'>Log Out</button>
         </>) : (<>
-         <NavLink className='btn !text-white btn-success  mr-1 ' to='/register'>Register</NavLink>
-       <NavLink className='btn shadow mr-1 btn-warning !text-white' to='/login'>Login</NavLink>
+         <NavLink className='btn border-white btn-secondary text-white  mr-1 ' to='/register'>Register</NavLink>
+       <NavLink className='btn border-white btn-secondary text-white  mr-1 ' to='/login'><FaLock></FaLock>Login</NavLink>
         </>)
 
     }

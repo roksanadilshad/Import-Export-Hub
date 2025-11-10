@@ -59,12 +59,6 @@ const Login = () => {
       setShowPass(!showPass)
     }
 
-    const handleForgetPassword = (e) =>{
-      e.preventDefault();
-      navigate('/forgetPassword', {state: { email: email,  from: location.state?.from?.pathname || '/'}})
-     
-    }
-
    
     return (
       <div>
@@ -95,7 +89,7 @@ const Login = () => {
                     <input name='password' type={showPass ? 'text' : "password"} className="input" placeholder="Password" />
                     <button type="button" onClick={handlePasswordShow} className='text-2xl top-2 text-center absolute z-10 right-5'>{showPass ? <FaEye></FaEye> : <LuEyeClosed></LuEyeClosed>}</button>
                     </div>
-          <button onClick={handleForgetPassword}><a className="button link-hover text-left">Forgot password?</a></button>
+          <button><a className="button link-hover text-left">Forgot password?</a></button>
 
           {
             err && <p className="text-red-700">Please provide a valid Email or Password !</p>
