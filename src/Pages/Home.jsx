@@ -1,9 +1,13 @@
 import React from 'react';
 import { CiFacebook, CiLinkedin } from 'react-icons/ci';
-import { FaFacebook, FaGoogle } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
+import { FaFacebook, FaGoogle, FaShip, FaShoppingBag } from 'react-icons/fa';
+import { FaCartShopping, FaXTwitter } from 'react-icons/fa6';
 import { IoIosArrowForward } from 'react-icons/io';
+import { IoCarSharp } from 'react-icons/io5';
+import { RiImportLine } from 'react-icons/ri';
 import { TbBrandGoogle } from 'react-icons/tb';
+import { TiExportOutline } from 'react-icons/ti';
+import WhatIDo from './whatIDo';
 
 const Home = () => {
     return (
@@ -26,32 +30,8 @@ const Home = () => {
                 </div>
                 
         </div>
-            </div>
-            <section>
-            <div className='text-center flex flex-col items-center py-20 bg-neutral'>
-
-         <h3 className='text-2xl font-bold pb-2'>Search thousands of verified export and import listings — from machinery to fashion, everything you need in one place.</h3>
-              <div className='flex items-center'>
-         <input type="text" name="" id="" className='bg-white focus:outline-none py-2 my-2 rounded-l'/><button className="btn btn-secondary border-white rounded-l-none">SEARCH</button>
-
-              </div>
-
-            </div>
-            </section>
-     <section className="relative bg-[url('https://images.pexels.com/photos/3063470/pexels-photo-3063470.jpeg')] bg-cover bg-center bg-no-repeat object-cover">
-      <div class="absolute inset-0 bg-black/60"></div>
-      <div className='relative  z-10'>
-           <h2 className='border-neutral  border-b-4 w-60 mx-auto  font-bold text-4xl text-center text-primary'>What I Do</h2>
-
-           <div>
-            <div>
-                <h3>IMPORT</h3>
-               
-            </div>
-           </div>
-      </div>
-
-     </section>
+            </div>     
+    <WhatIDo></WhatIDo>
         </div>
     );
 };

@@ -15,3 +15,6 @@ body{
     background: #EFECE3;
      font-family: "Poppins", sans-serif
 }
+.active{
+  background-color: #4A70A9;
+}
