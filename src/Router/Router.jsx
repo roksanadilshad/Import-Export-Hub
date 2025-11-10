@@ -4,32 +4,17 @@ import Root from '../Layouts/root';
 import Home from '../Pages/Home';
 import Registration from '../Pages/Register';
 import Login from '../Pages/Login';
+import AllProducts from '../Pages/AllProducts';
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element:<Root></Root>,
-    errorElement:<p>Add Firebase</p>,
+    //errorElement:<p>Add Firebase</p>,
     children: [
         {
             index: true,
-            path:'/',
-  //             loader: async () => {
-  //   const [petsRes, tipsRes, vetsRes] = await Promise.all([
-  //     fetch('/pets.json'),
-  //     fetch('/tips.json'),
-  //     fetch('/vets.json')
-      
-  //   ]);
-
-  //   const [pets, tips, vets] = await Promise.all([
-  //     petsRes.json(),
-  //     tipsRes.json(),
-  //     vetsRes.json()
-  //   ]);
-
-  //   return { pets, tips,  vets};
-  // },
+            loader:()=> fetch('http://localhost:3000/products'),
             element:<Home></Home>,
         },
         {
@@ -39,6 +24,17 @@ export const router = createBrowserRouter([
         {
           path:'/login' ,
          element:<Login></Login>
+        },
+       
+        {
+          path:'/allProducts' ,
+          loader:()=> fetch('http://localhost:3000/products'),
+         element:<AllProducts></AllProducts>
+        },
+        {
+          path:'/productDetails' ,
+          loader:()=> fetch('http://localhost:3000/products'),
+         element:<AllProducts></AllProducts>
         },
        
     ]

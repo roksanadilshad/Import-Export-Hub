@@ -14,10 +14,10 @@ const Header = () => {
     }
     const links = <>
     <li><NavLink to='/'>Home</NavLink></li>
-    <li><NavLink to='/service'>All Products</NavLink></li>
+    <li><NavLink to='/allProducts'>All Products</NavLink></li>
     <li><NavLink to='/profile'>My Exports</NavLink></li>
     <li><NavLink to='/profile'>My Imports</NavLink></li>
-    <li><NavLink to='/profile'>Add Export routes</NavLink></li>
+    <li><NavLink to='/profile'>Add Export</NavLink></li>
     </>
     return (
         <div className=" bg-[#8FABD4] lg:px-20  navbar shadow-sm flex justify-between items-center">
@@ -54,8 +54,8 @@ const Header = () => {
     {
         user ? 
         (<>
-        <a href='/profile' className=""><img src={user?.photoURL || 'https://images.unsplash.com/photo-1747592771443-e15f155b1faf?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyN3x8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=60&w=500'} className='lg:w-12 lg:h-12 w-10 h-10 rounded-full' title={user.displayName} /></a>
-        <button onClick={handleSignout} className='btn btn-success border-[#B4C408] text-white ml-2'>Log Out</button>
+       <div className='flex justify-around items-center gap-6'> <a href='/profile' className=""><img src={user?.photoURL || 'https://images.unsplash.com/photo-1747592771443-e15f155b1faf?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyN3x8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=60&w=500'} className='lg:w-12 lg:h-12 w-10 h-10 rounded-full' title={user.displayName} /></a>
+        <button onClick={handleSignout} className='btn border-white btn-secondary text-white  mr-1 '>Log Out</button></div>
         </>) : (<>
          <NavLink className='btn border-white btn-secondary text-white  mr-1 ' to='/register'>Register</NavLink>
        <NavLink className='btn border-white btn-secondary text-white  mr-1 ' to='/login'><FaLock></FaLock>Login</NavLink>
@@ -63,7 +63,7 @@ const Header = () => {
 
     }
   </div>
-  
+
 </div>
     );
 };

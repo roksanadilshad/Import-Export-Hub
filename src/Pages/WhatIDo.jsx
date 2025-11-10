@@ -9,11 +9,11 @@ const WhatIDo = () => {
     return (
         <div>
              <section className="relative bg-[url('https://images.pexels.com/photos/3063470/pexels-photo-3063470.jpeg')] bg-cover bg-center bg-no-repeat object-cover pb-20">
-      <div class="absolute inset-0 bg-black/70"></div>
+      <div className="absolute inset-0 bg-black/70"></div>
       <div className='relative  z-10'>
         <div className='py-20'>
 
-           <h2 className='border-neutral  border-b-4 w-60 mx-auto  font-bold text-4xl text-center text-primary '>What I Do</h2>
+           <h2 className='border-neutral  border-b-4 w-60 mx-auto  font-bold text-4xl text-center text-primary '>WHAT I DO</h2>
         </div>
 
            <div className='w-11/12 mx-auto grid grid-cols-2 gap-20'>
