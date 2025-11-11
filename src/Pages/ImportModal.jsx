@@ -13,15 +13,8 @@ const ImportModal = ({ product, onClose, handleImported }) => {
     originCountry,
     rating,
     _id} = product
-    try {
-      const res = await fetch("http://localhost:3000/imports", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-       
-        body: JSON.stringify({
-          productId: _id,
+
+    const modalData = {
           productImage:productImage,
           productName:productName,
           price:price,
@@ -30,7 +23,16 @@ const ImportModal = ({ product, onClose, handleImported }) => {
           availableQuantity: Number(quantity),
           import_by: user.email,
             createdAt: new Date()
-        }),
+    }
+
+    try {
+      const res = await fetch("http://localhost:3000/imports", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+       
+        body: JSON.stringify(modalData),
       });
 
       const data = await res.json();

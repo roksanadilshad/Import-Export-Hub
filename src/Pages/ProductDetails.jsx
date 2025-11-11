@@ -53,31 +53,32 @@ const ProductDetails = () => {
       availableQuantity: prev.availableQuantity - quantity,
     }));
     // setImportsUpdated((prev) => !prev);
-     const finalImport = {
-      productImage:productImage,
-      productName:productName,
-      availableQuantity: product.availableQuantity - quantity,
-      exporterEmail: exporterEmail,
-      createdAt: new Date(),
-      import_by: user.email,
-    };
+    //  const finalImport = {
+    //   productImage:productImage,
+    //   productName:productName,
+    //   availableQuantity: product.availableQuantity - quantity,
+    //   exporterEmail: exporterEmail,
+    //   createdAt: new Date(),
+    //   import_by: user.email,
+    //   id: _id,
+    // };
 
-    fetch(`https://localhost:3000/imports/`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(finalImport),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-       alert("Successfully downloaded!");
-        setRefeth(!refetch)
-      })
-       .catch((err) => {
-        console.log(err);
-      });
+    // fetch(`https://localhost:3000/imports/${product._id}`, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(finalImport),
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     console.log(data);
+    //    alert("Successfully downloaded!");
+    //     setRefeth(!refetch)
+    //   })
+    //    .catch((err) => {
+    //     console.log(err);
+    //   });
   }
 
 
@@ -102,7 +103,7 @@ const ProductDetails = () => {
 
         {/* Product Info */}
         <div className="lg:w-1/2 p-10 flex flex-col justify-between space-y-6">
-          <h2 className="text-4xl font-extrabold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+          <h2 className="text-4xl font-extrabold bg-accent bg-clip-text text-transparent">
             {productName}
           </h2>
 
@@ -125,7 +126,7 @@ const ProductDetails = () => {
 
           <button
             onClick={() => setShowModal(true)}
-            className="bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-3 px-6 rounded-xl hover:scale-105 hover:shadow-xl transition-transform duration-500 ease-in-out"
+            className="bg-secondary text-white font-bold py-3 px-6 rounded-xl hover:scale-105 hover:shadow-xl transition-transform duration-500 ease-in-out"
           >
             Import Now
           </button>
