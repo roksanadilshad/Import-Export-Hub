@@ -37,7 +37,7 @@ const AllProducts = () => {
             <button className="btn btn-secondary rounded-l-none">{loading ? "Searching...." : "Search"}</button>
         </form>
 
-        <div className=" w-11/12 mx-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
+        <div className=" w-11/12 mx-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 py-10">
         {products.map((product) => (
           <ProductCard basePath="/products" key={product._id} products={product} />
         ))}

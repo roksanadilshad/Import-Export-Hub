@@ -9,6 +9,8 @@ import ProductDetails from '../Pages/ProductDetails';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import MyImports from '../Pages/MyImports';
 import AddExport from '../Pages/AddExport';
+import MyExport from '../Pages/MyExport';
+import UpdateExport from '../Components/UpdateExport';
 
 export const router = createBrowserRouter([
   {
@@ -52,6 +54,15 @@ export const router = createBrowserRouter([
         {
           path:'/addExport' ,
          element:<PrivateRoute><AddExport></AddExport></PrivateRoute>
+        },
+        {
+          path:'/my-exports' ,
+         element:<PrivateRoute><MyExport></MyExport></PrivateRoute>
+        },
+       
+        {
+          path:'/updateExport/:id' ,
+         element:<PrivateRoute><UpdateExport></UpdateExport></PrivateRoute>,
         },
        
        

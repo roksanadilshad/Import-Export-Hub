@@ -37,7 +37,7 @@ const ImportModal = ({ product, onClose, handleImported }) => {
           import_by: user.email,
             createdAt: new Date()
     }
-console.log(modalData);
+//console.log(modalData);
 
     try {
       const res = await fetch("http://localhost:3000/imports", {
@@ -50,11 +50,7 @@ console.log(modalData);
       });
 
       const data = await res.json();
-      console.log("🔹 Server response:", data
-
-      );
       
-
       if (res.ok) {
         Swal.fire("Success", data.message || "Product imported successfully.", "success");
         handleImported(Number(qty)); // update quantity in parent
@@ -99,7 +95,7 @@ console.log(modalData);
           <button
             onClick={handleImport}
             disabled={quantity < 1 || quantity > product.availableQuantity}
-            className="px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition disabled:opacity-50"
+            className="px-4 py-2 bg-secondary text-white rounded border-white hover:bg-accent transition disabled:opacity-50"
           >
             Import
           </button>

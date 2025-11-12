@@ -3,6 +3,7 @@ import { FaHeart, FaStar } from 'react-icons/fa';
 import { FiShoppingCart } from 'react-icons/fi';
 import { Link } from 'react-router';
 import Swal from 'sweetalert2';
+import RatingStars from '../Pages/RatingStars';
 
 const ImportCard = ({products, setProducts}) => {
     
@@ -15,7 +16,7 @@ const ImportCard = ({products, setProducts}) => {
      importedQuantity,
     productId,
 } = products
-console.log(products);
+//console.log(products);
 
     
 const handleDlete = () => {
@@ -37,7 +38,7 @@ const handleDlete = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            //console.log(data);
             if(data.success){
                 Swal.fire("Deleted!", "Your product has been deleted.", "success");
                 setProducts((prev) => prev.filter((p) => p._id !== _id));
@@ -70,10 +71,6 @@ const handleDlete = () => {
       alt={productName}
       className="h-100 w-full object-cover rounded-t-2xl"
     />
-
-    {/* Shopping cart icon */}
-    <FiShoppingCart className="absolute top-3 left-3 text-3xl bg-secondary text-primary p-1 rounded cursor-pointer hover:bg-primary hover:text-accent transition-all" />
-
     {/* Heart icon */}
     <FaHeart className="absolute top-3 right-3 text-3xl text-secondary hover:text-primary cursor-pointer transition-all" />
   </div>
@@ -84,7 +81,7 @@ const handleDlete = () => {
     <span>Price:{price}$</span>
     </div>
     <div className='flex justify-center items-center'>
-         <span className='flex justify-evenly items-center'>{rating}<FaStar className='text-amber-400'></FaStar></span>
+          <RatingStars rating={rating} />
      
     </div>
     <span>Made in {originCountry}</span>
@@ -92,7 +89,7 @@ const handleDlete = () => {
         
         </span>
     
-    <div className="card-actions flex justify-evenly items-center pt-2">
+    <div className="card-actions flex justify-evenly items-center pt-2 mb-4">
       <Link to={`/productDetails/${productId}`} className="btn border-white btn-secondary ">See Details</Link>
       <button onClick={handleDlete} className="btn btn-secondary border-white">Remove</button>
     </div>

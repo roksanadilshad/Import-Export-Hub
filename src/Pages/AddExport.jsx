@@ -1,11 +1,52 @@
-import React from 'react';
+import React, { use } from 'react';
+import { AuthContext } from '../Context/AuthContext';
+import toast from 'react-hot-toast';
 
 const AddExport = () => {
+
+  const {user} = use(AuthContext)
+
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+
+    const formData = {
+     productName: e.target.productName.value,
+      productImage: e.target.productImage.value,
+      price: e.target.price.value,
+      name: e.target.name.value,
+      originCountry: e.target.originCountry.value,
+      availableQuantity: e.target.availableQuantity.value,
+      rating: e.target.rating.value,
+      created_at: new Date(),
+      exporterEmail: user.email
+
+    }
+    fetch('http://localhost:3000/products', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(res => res.json())
+    .then(data=> {
+      toast.success("Successfully added!")
+      console.log(data)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+   
+
+  }
+
+  
+   
     return (
           <div className="card border border-gray-200 bg-base-100 w-full max-w-md mx-auto shadow-2xl rounded-2xl">
       <div className="card-body p-6 relative">
         <h2 className="text-2xl font-bold text-center mb-6">Add New Product</h2>
-        <form className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4">
           {/* Name Field */}
           <div>
             <label className="label font-medium">Product Name</label>
@@ -14,11 +55,9 @@ const AddExport = () => {
               name="productName"
               required
               className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
-              placeholder="Enter name"
+              placeholder="Enter Product Name"
             />
           </div>
-          {/* {/"seeDetails":"See Details","createdAt":"2025-11-10T10:30:00Z","exporterEmail":"exporter1@tradehub.com"} */} 
-          {/* Thumbnail URL */}
           <div>
             <label className="label font-medium">Product Image</label>
             <input

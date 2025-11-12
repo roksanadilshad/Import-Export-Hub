@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { AuthContext } from "../Context/AuthContext";
 import ProductCard from "../Components/ProductCArd";
-import ImportCard from "./ImportCard";
+import ImportCard from "../Components/ImportCard";
 
 const MyImports = () => {
        const { user, loading, setLoading } = useContext(AuthContext);
@@ -50,7 +50,7 @@ const MyImports = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-3 lg:grid-cols-4 gap-3">
+      <div className=" w-11/12 mx-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 py-10">
         {products.map((products) => (
           <ImportCard key={products._id} setProducts={setProducts} products={products} />
         ))}
