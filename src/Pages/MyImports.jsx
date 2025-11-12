@@ -4,16 +4,17 @@ import ProductCard from "../Components/ProductCArd";
 import ImportCard from "./ImportCard";
 
 const MyImports = () => {
-  const { user, loading, setLoading } = useContext(AuthContext);
-  const [products, setProducts] = useState([]);
-
+       const { user, loading, setLoading } = useContext(AuthContext);
+       const [products, setProducts] = useState([]);
+     //console.log(user);
+     
   useEffect(() => {
-    if (!user?.accessToken) return;
-
-    // setLoading(true);
-    fetch(`http://localhost:3000/my-imports?email=${user.email}`, {
-      headers: {
-        authorization: `Bearer ${user.accessToken}`,
+       if (!user?.accessToken) return;
+   
+       // setLoading(true);
+       fetch(`http://localhost:3000/my-imports?email=${user.email}`, {
+         headers: {
+           authorization: `Bearer ${user.accessToken}`,
       },
     })
       .then((res) => res.json())
@@ -21,16 +22,16 @@ const MyImports = () => {
 
         const margeProduct = [];
 
-        data.forEach((products)=>{
+        data.forEach((importItem)=>{
             const existing = margeProduct.find(
-                (p) => p.productId === products.productId
+                (p) => p.productId === importItem.productId
             );
             if(existing){
-                existing.availableQuantity += products.availableQuantity
+                existing.quantity += importItem.quantity || 0;
                      
             }
             else{
-                margeProduct.push({...products})
+                margeProduct.push({...importItem})
             }
         })
         //console.log(margeProduct);
@@ -43,9 +44,9 @@ const MyImports = () => {
       });
   }, [user, setLoading]);
 
-//   if (loading) {
-//     return <div>Please wait... Loading...</div>;
-//   }
+  if (loading) {
+    return <div>Please wait... Loading...</div>;
+  }
 
   return (
     <div>

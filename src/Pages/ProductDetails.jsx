@@ -13,6 +13,7 @@ const ProductDetails = () => {
   const [showModal, setShowModal] = useState(false);
    //const [refetch, setRefeth] = useState(false)
 
+ //console.log(user);
  
   useEffect(() => {
     if (!user?.accessToken) return;
@@ -24,7 +25,7 @@ const ProductDetails = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data,id);
+        //console.log(data,id);
         
         setProduct(data.result)
         setLoading(false)
@@ -51,33 +52,6 @@ const ProductDetails = () => {
       ...prev,
       availableQuantity: prev.availableQuantity - quantity,
     }));
-    // setImportsUpdated((prev) => !prev);
-    //  const finalImport = {
-    //   productImage:productImage,
-    //   productName:productName,
-    //   availableQuantity: product.availableQuantity - quantity,
-    //   exporterEmail: exporterEmail,
-    //   createdAt: new Date(),
-    //   import_by: user.email,
-    //   id: _id,
-    // };
-
-    // fetch(`https://localhost:3000/imports/${product._id}`, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(finalImport),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     console.log(data);
-    //    alert("Successfully downloaded!");
-    //     setRefeth(!refetch)
-    //   })
-    //    .catch((err) => {
-    //     console.log(err);
-    //   });
   }
 
 

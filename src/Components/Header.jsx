@@ -17,7 +17,7 @@ const Header = () => {
     <li><NavLink to='/allProducts'>All Products</NavLink></li>
     <li><NavLink to='/profile'>My Exports</NavLink></li>
     <li><NavLink to='/myImports'>My Imports</NavLink></li>
-    <li><NavLink to='/profile'>Add Export</NavLink></li>
+    <li><NavLink to='/addExport'>Add Export</NavLink></li>
     </>
     return (
         <div className=" bg-[#8FABD4] lg:px-20  navbar shadow-sm flex justify-between items-center">

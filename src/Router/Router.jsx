@@ -8,6 +8,7 @@ import AllProducts from '../Pages/AllProducts';
 import ProductDetails from '../Pages/ProductDetails';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import MyImports from '../Pages/MyImports';
+import AddExport from '../Pages/AddExport';
 
 export const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ export const router = createBrowserRouter([
         {
           path:'/imported-products/:id' ,
          element:<PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>
+        },
+        {
+          path:'/addExport' ,
+         element:<PrivateRoute><AddExport></AddExport></PrivateRoute>
         },
        
        

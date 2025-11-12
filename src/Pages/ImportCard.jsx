@@ -12,9 +12,11 @@ const ImportCard = ({products, setProducts}) => {
         price,
         originCountry, 
         rating,
-    availableQuantity,
+     importedQuantity,
     productId,
 } = products
+console.log(products);
+
     
 const handleDlete = () => {
     Swal.fire({
@@ -60,6 +62,7 @@ const handleDlete = () => {
 
     return (
         <div>
+            <div></div>
            <div className="card h-full  bg-neutral w-full shadow-sm rounded-2xl">
     <div className="relative">
     <img
@@ -75,10 +78,9 @@ const handleDlete = () => {
     <FaHeart className="absolute top-3 right-3 text-3xl text-secondary hover:text-primary cursor-pointer transition-all" />
   </div>
   <div className="text-center text-primary">
-    <h2 className="text-2xl font-semibold text-primary">{productName
-}</h2>
+    <h2 className="text-2xl font-semibold text-primary">{productName}</h2>
     <div className='flex justify-evenly items-center'>
-    <span>Available:{availableQuantity}</span>
+    <span>Available:{importedQuantity}</span>
     <span>Price:{price}$</span>
     </div>
     <div className='flex justify-center items-center'>
