@@ -22,13 +22,8 @@
 - **Backend:** Node.js, Express.js  
 - **Database:** MongoDB  
 - **Authentication:** JWT (JSON Web Token)  
-- **Hosting:** Vercel / Render / Netlify (depending on your setup)
+- **Hosting:** Firebase
 
 ---
 
-## 📦 Installation & Setup
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/import-export-hub.git
-   cd import-export-hub
+Website Link -https://assignment-10-dad5c.web.app/ 

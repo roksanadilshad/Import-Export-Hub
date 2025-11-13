@@ -32,11 +32,8 @@ const AddExport = () => {
       navigate('/'); // or wherever your home/latest-products route is
     }
 
-
   }
 
-  
-   
     return (
       <div>
         <div>
