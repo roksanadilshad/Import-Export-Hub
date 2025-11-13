@@ -25,11 +25,11 @@ const Header = () => {
         .catch()
     }
     const links = <>
-    <li><NavLink className='text-[10px] md:text-[12px] lg:text-[16px]' to='/'>Home</NavLink></li>
-    <li><NavLink className='text-[10px] md:text-[12px] lg:text-[16px]' to='/allProducts'>All Products</NavLink></li>
-    <li><NavLink className='text-[10px] md:text-[12px] lg:text-[16px]' to='/my-exports'>My Exports</NavLink></li>
-    <li><NavLink className='text-[10px] md:text-[12px] lg:text-[16px]' to='/myImports'>My Imports</NavLink></li>
-    <li><NavLink className='text-[10px] md:text-[12px] lg:text-[16px]' to='/addExport'>Add Export</NavLink></li>
+    <li><NavLink className=' lg:text-[12px] xl:text-[16px] lg:m-0 lg:p-1' to='/'>Home</NavLink></li>
+    <li><NavLink className=' lg:text-[12px] xl:text-[16px] lg:m-0 lg:p-1' to='/allProducts'>All Products</NavLink></li>
+    <li><NavLink className=' lg:text-[12px] xl:text-[16px] lg:m-0 lg:p-1' to='/my-exports'>My Exports</NavLink></li>
+    <li><NavLink className=' lg:text-[12px] xl:text-[16px] lg:m-0 lg:p-1' to='/myImports'>My Imports</NavLink></li>
+    <li><NavLink className=' lg:text-[12px] xl:text-[16px] lg:m-0 lg:p-1' to='/addExport'>Add Export</NavLink></li>
     </>
     return (
         <div className=" bg-[#8FABD4] lg:px-20  navbar shadow-sm flex justify-between items-center">
@@ -42,7 +42,7 @@ const Header = () => {
           </div>
       <ul
         tabIndex={0}
-        className="menu menu-sm dropdown-content bg-primary rounded-box z-[50] mt-3 lg:w-52 p-2 shadow">
+        className="menu menu-sm dropdown-content bg-primary rounded-box z-[50] mt-3 w-52 p-2 shadow">
        {links}
       </ul>
     </div>
