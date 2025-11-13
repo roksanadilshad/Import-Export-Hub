@@ -25,11 +25,11 @@ const Header = () => {
         .catch()
     }
     const links = <>
-    <li><NavLink to='/'>Home</NavLink></li>
-    <li><NavLink to='/allProducts'>All Products</NavLink></li>
-    <li><NavLink to='/my-exports'>My Exports</NavLink></li>
-    <li><NavLink to='/myImports'>My Imports</NavLink></li>
-    <li><NavLink to='/addExport'>Add Export</NavLink></li>
+    <li><NavLink className='text-[10px] md:text-[12px] lg:text-[16px]' to='/'>Home</NavLink></li>
+    <li><NavLink className='text-[10px] md:text-[12px] lg:text-[16px]' to='/allProducts'>All Products</NavLink></li>
+    <li><NavLink className='text-[10px] md:text-[12px] lg:text-[16px]' to='/my-exports'>My Exports</NavLink></li>
+    <li><NavLink className='text-[10px] md:text-[12px] lg:text-[16px]' to='/myImports'>My Imports</NavLink></li>
+    <li><NavLink className='text-[10px] md:text-[12px] lg:text-[16px]' to='/addExport'>Add Export</NavLink></li>
     </>
     return (
         <div className=" bg-[#8FABD4] lg:px-20  navbar shadow-sm flex justify-between items-center">
@@ -42,7 +42,7 @@ const Header = () => {
           </div>
       <ul
         tabIndex={0}
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[50] mt-3 w-52 p-2 shadow">
+        className="menu menu-sm dropdown-content bg-primary rounded-box z-[50] mt-3 lg:w-52 p-2 shadow">
        {links}
       </ul>
     </div>
@@ -52,8 +52,8 @@ const Header = () => {
     <Link to='/'>
      <div className='flex justify-center items-center'>
       
-   <img src="https://i.ibb.co.com/QvWc04mY/t-removebg-preview.png" alt=""  className='w-15 '/>
-   <h3 className='font-bold text-xl lg:text-2xl text-[#EFECE3]'>Import Export <span className='text-[#4A70A9]'>Hub</span></h3>
+   <img src="https://i.ibb.co.com/QvWc04mY/t-removebg-preview.png" alt=""  className='lg:w-15 w-6 '/>
+   <h3 className='lg:font-bold font-semibold text-[12px] md:text-xl lg:text-2xl text-[#EFECE3]'>Import Export <span className='text-[#4A70A9]'>Hub</span></h3>
     </div>
     </Link>
   <div className="justify-center items-center hidden lg:flex">
@@ -67,15 +67,15 @@ const Header = () => {
            onChange={(e)=> handleTheme(e.target.checked)}
            type="checkbox"
            defaultChecked={localStorage.getItem('theme') === "dark"}
-           className="toggle mr-4"/>
+           className="toggle mr-4 w-8"/>
     {
         user ? 
         (<>
-       <div className='flex justify-around items-center gap-6'> <a href='/profile' className=""><img src={user?.photoURL || 'https://images.unsplash.com/photo-1747592771443-e15f155b1faf?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyN3x8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=60&w=500'} className='lg:w-12 lg:h-12 w-10 h-10 rounded-full' title={user.displayName} /></a>
+       <div className='flex justify-around items-center gap-6'> <a href='' className=""><img src={user?.photoURL || 'https://images.unsplash.com/photo-1747592771443-e15f155b1faf?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyN3x8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=60&w=500'} className='lg:w-12 lg:h-12 w-10 h-10 rounded-full' title={user.displayName} /></a>
         <button onClick={handleSignout} className='btn border-white btn-secondary text-white  mr-1 '>Log Out</button></div>
         </>) : (<>
          <NavLink className='btn border-white btn-secondary text-white  mr-1 ' to='/register'>Register</NavLink>
-       <NavLink className='btn border-white btn-secondary text-white  mr-1 ' to='/login'><FaLock></FaLock>Login</NavLink>
+       <NavLink className='btn border-white btn-secondary text-white px-1   mr-1 ' to='/login'><FaLock></FaLock>Login</NavLink>
         </>)
 
     }

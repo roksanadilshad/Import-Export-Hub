@@ -2,16 +2,16 @@ import React, { useEffect, useState, useContext } from 'react';
 import { AuthContext } from '../Context/AuthContext';
 import Loading from './Loading';
 import { useParams } from 'react-router';
-
-
 import RatingStars from './RatingStars';
 import ImportModal from './ImportModal';
+import ProductCard from '../Components/ProductCArd';
 
 const ProductDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
   const { user, loading, setLoading } = useContext(AuthContext);
   const [showModal, setShowModal] = useState(false);
+  const [latestProducts, setLatestProducts] = useState([]);
    //const [refetch, setRefeth] = useState(false)
 
  //console.log(user);
@@ -34,6 +34,10 @@ const ProductDetails = () => {
       .catch((err) => {
         console.error(err);
       });
+
+      fetch(`http://localhost:3000/latest-products`)
+      .then(res => res.json())
+      .then(data => setLatestProducts(data));
   }, [user, id, setLoading]);
 
     //console.log(product);
@@ -47,7 +51,9 @@ const ProductDetails = () => {
     availableQuantity,
     _id
   } = product;
-
+ 
+    const showProducts = latestProducts.slice(0,4)
+   
   const handleImported = (quantity) => {
     setProduct((prev) => ({
       ...prev,
@@ -55,12 +61,9 @@ const ProductDetails = () => {
     }));
   }
 
-
   if (loading || !product?._id) {
   return <Loading />;
 }
-
-
 
   return (
     <div>
@@ -68,24 +71,18 @@ const ProductDetails = () => {
 
    <title>Product Details</title>
       </div>
-    <div className="card-side card bg-neutral shadow-sm mx-10 my-20">
-      {/* <div className="flex flex-col lg:flex-row bg-neutral shadow-2xl rounded-3xl overflow-hidden border border-gray-100 hover:shadow-3xl transition-all"> */}
-        {/* Product Image */}
-        {/* <div className="lg:w-1/2 relative  overflow-hidden flex justify-center items-center bg-gray-50"> */}
+    <div className="flex justify-between lg:flex-row flex-col bg-neutral shadow-sm rounded-2xl mx-2 lg:mx-10 my-2 lg:my-20">
+      
        <div className=''>
-
           <img
             src={productImage}
             alt={productName}
-            className="w-full h-full  transition-transform transform group-hover:scale-105 group-hover:rotate-1"
+            className="w-full rounded-2xl h-full  transition-transform transform group-hover:scale-105 group-hover:rotate-1"
           />
        </div>
-      
-          {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black opacity-20 transition-opacity duration-700"></div> */}
-        {/* </div> */}
-        <div className='w-[50%]'>
-        <div className="p-10 flex flex-col justify-between space-y-6">
-          <h2 className="text-4xl font-extrabold bg-accent bg-clip-text text-transparent">
+        <div className='lg:w-[50%]'>
+        <div className="lg:p-10 p-5 flex flex-col justify-between lg:space-y-6 space-y-2">
+          <h2 className="lg:text-4xl text-2xl font-extrabold bg-accent bg-clip-text text-transparent">
             {productName}
           </h2>
 
@@ -120,10 +117,15 @@ const ProductDetails = () => {
               handleImported={handleImported}
             />
           )}
+           <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4  py-5 lg:py-10'>
+            {
+              showProducts.map(products => <ProductCard products={products} key={products._id}></ProductCard> )
+            }
+           </div>
+           
         </div>
         </div>
-        {/* Product Info */}
-     {/* </div>  */}
+       
     </div>
     </div>
   );

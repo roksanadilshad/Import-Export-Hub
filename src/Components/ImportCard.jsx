@@ -82,7 +82,6 @@ const handleDlete = () => {
     </div>
     <div className='flex justify-center items-center'>
           <RatingStars rating={rating} />
-     
     </div>
     <span>Made in {originCountry}</span>
     <span>

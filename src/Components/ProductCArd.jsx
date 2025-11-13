@@ -3,7 +3,7 @@ import { CiHeart } from 'react-icons/ci';
 import { FaHeart, FaRegStar, FaStar } from 'react-icons/fa6';
 import { FiHeart, FiShoppingCart } from 'react-icons/fi';
 import { Link } from 'react-router';
-import RatingStars from './RatingStars';
+import RatingStars from '../Pages/RatingStars';
 
 const ProductCard = ({products}) => {
       //console.log(products);
@@ -30,7 +30,7 @@ const ProductCard = ({products}) => {
     <FiShoppingCart className="absolute top-3 left-3 text-3xl bg-secondary text-primary p-1 rounded cursor-pointer hover:bg-primary hover:text-accent transition-all " />
 
     {/* Heart icon */}
-    <FaHeart className="absolute top-3 right-3 text-3xl text-secondary hover:text-primary cursor-pointer transition-all" />
+    <FaHeart className="absolute top-3 right-3 text-3xl text-secondary hover:text-primary  cursor-pointer transition-all" />
   </div>
   <div className="text-center text-primary">
     <h2 className="text-2xl font-semibold text-primary">{productName

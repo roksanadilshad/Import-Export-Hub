@@ -3,6 +3,8 @@ import { useLoaderData } from 'react-router';
 import { AuthContext } from '../Context/AuthContext';
 import ProductCard from '../Components/ProductCArd';
 
+
+
 const AllProducts = () => {
     const data = useLoaderData();
     const [products, setProducts] = useState(data)
@@ -30,12 +32,12 @@ const AllProducts = () => {
 
           <title >All Product</title>
           </div>
-           <div className='py-10'>
+           <div className='lg:py-10 py-5'>
 
            <h2 className='border-b-4 border-secondary w-100 mx-auto  font-bold text-4xl text-center text-accent '>ALL PRODUCTS</h2>
         </div>
 
-        <form onSubmit={handleSearch} className='pb-10 flex justify-center items-center
+        <form onSubmit={handleSearch} className='lg:pb-10 flex justify-center items-center
         '>
             <input type="search" name="search" placeholder='Search products 🔎︎' className='py-2 px-4 bg-neutral rounded-l text-[#777777e8]' />
             <button className="btn btn-secondary rounded-l-none">{loading ? "Searching...." : "Search"}</button>

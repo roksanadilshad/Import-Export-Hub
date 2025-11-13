@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
 import { AuthContext } from "../Context/AuthContext";
-import ProductCard from "../Components/ProductCArd";
 import ImportCard from "../Components/ImportCard";
 
 const MyImports = () => {
@@ -54,6 +53,7 @@ const MyImports = () => {
 
       <title>My Imports</title>
       </div>
+      <h2 className='border-b-4 border-secondary lg:w-120 w-80 mx-auto  font-bold text-2xl lg:text-4xl text-center text-accent my-5 lg:my-10'>MY IMPORT PRODUCTS</h2>
       <div className=" w-11/12 mx-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 py-10">
         {products.map((products) => (
           <ImportCard key={products._id} setProducts={setProducts} products={products} />

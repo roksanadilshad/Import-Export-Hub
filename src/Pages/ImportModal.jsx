@@ -67,9 +67,9 @@ const ImportModal = ({ product, onClose, handleImported }) => {
   return (
     <div>
       <div><title>Import Modal</title></div>
-     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+     <div className="fixed inset-0 flex items-center justify-center bg-secondary bg-opacity-50 z-50">
       <div className="bg-white p-6 rounded-xl w-80 shadow-lg">
-        <h2 className="text-xl font-bold mb-4 text-center">
+        <h2 className="text-xl text-primary font-bold mb-4 text-center">
           Import {product.productName}
         </h2>
 
@@ -83,7 +83,7 @@ const ImportModal = ({ product, onClose, handleImported }) => {
           max={product.availableQuantity}
           value={quantity}
           onChange={(e) => setQuantity(Number(e.target.value))}
-          className="border rounded px-3 py-2 w-full mb-4 focus:outline-none focus:ring-2 focus:ring-purple-400"
+          className="border text-black rounded px-3 py-2 w-full mb-4 focus:outline-none focus:ring-2 focus:ring-purple-400"
         />
 
         <div className="flex justify-between">
@@ -97,7 +97,7 @@ const ImportModal = ({ product, onClose, handleImported }) => {
           <button
             onClick={handleImport}
             disabled={quantity < 1 || quantity > product.availableQuantity}
-            className="px-4 py-2 bg-secondary text-white rounded border-white hover:bg-accent transition disabled:opacity-50"
+            className="px-4 py-2 bg-secondary text-white rounded border-white hover:bg-accent dark:hover:text-black transition disabled:opacity-50"
           >
             Import
           </button>
