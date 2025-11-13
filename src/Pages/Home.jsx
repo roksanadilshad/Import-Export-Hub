@@ -31,14 +31,14 @@ const Home = () => {
             <div>
            <title>Home</title>
             </div>
-            <div className="relative bg-[url('https://images.pexels.com/photos/577210/pexels-photo-577210.jpeg')] bg-cover bg-center bg-no-repeat object-cover lg:h-screen">
+            <div className="relative bg-[url('https://images.pexels.com/photos/577210/pexels-photo-577210.jpeg')] bg-cover bg-center bg-no-repeat object-cover  lg:h-screen">
             <div className="absolute inset-0 bg-black/40"></div>
          <div className='relative  z-10'>
 
             <div className='md:pt-10 lg:pt-20 pt-15  xl:pt-64 w-11/12 mx-auto *:pb-2'>
-            <h4 className='lg:text-2xl text-[12px] md:text-xl text-primary font-bold'>Connecting Global Markets, One Click at a Time</h4>
-            <h2 className='lg:text-4xl xl:text-6 text-[16px] md:text-2xl text-white font-bold'>Discover, import, and export products worldwide <br/>
-            <span className='lg:text-6xl xl:text-8xl md:text-5xl text-2xl text-accent font-bold' >— all from one seamless platform
+            <h4 className='lg:text-2xl text-xl md:text-xl text-primary font-bold'>Connecting Global Markets, One Click at a Time</h4>
+            <h2 className='lg:text-4xl xl:text-6 text-2xl md:text-3xl text-white font-bold'>Discover, import, and export products worldwide <br/>
+            <span className='lg:text-6xl xl:text-8xl md:text-6xl text-4xl text-accent font-bold' >— all from one seamless platform
                 </span></h2>
 
                 <button className='btn my-5  border-white btn-secondary text-white pt-1'>CONTACT ME<span><IoIosArrowForward></IoIosArrowForward></span></button>
@@ -101,7 +101,7 @@ const Home = () => {
     <section>
         <div className='lg:py-20 py-10'>
 
-           <h2 className='border-b-4 border-secondary w-100 mx-auto  font-bold text-4xl text-center text-accent '>LATEST PRODUCTS</h2>
+           <h2 className='border-b-4 border-secondary w-100 mx-auto  font-bold lg:text-4xl text-2xl text-center text-accent '>LATEST PRODUCTS</h2>
         </div>
         <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 w-11/12 mx-auto lg:pb-20'>
            {
@@ -116,7 +116,7 @@ const Home = () => {
     <section>
         <div className='lg:py-20 py-10'>
 
-           <h2 className='border-b-4 border-secondary w-100 mx-auto  font-bold text-4xl text-center text-accent '>POPULAR PRODUCTS</h2>
+           <h2 className='border-b-4 border-secondary w-100 mx-auto  font-bold lg:text-4xl text-2xl text-center text-accent '>POPULAR PRODUCTS</h2>
         </div>
         <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 w-11/12 mx-auto pb-20'>
             { loading ? (<Skleton count={products.length}></Skleton>) :( popularProducts.map(products=> <ProductCard key={products._id} products={products}></ProductCard>))
