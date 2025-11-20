@@ -64,14 +64,17 @@ const Login = () => {
       <div>
         <div><title>Log In</title></div>
 {
-  loading ? (<Loader></Loader>) : (<div className=" lg:mt-40 mt-20  min-h-screen">
+  loading ? (<Loader></Loader>) : (
+  <div className="lg:h-200">
+
+  <div className=" lg:mt-40 mt-20 card border m-10 border-gray-200 bg-neutral w-full max-w-md mx-auto shadow-2xl rounded-2xl">
   <div className=" flex-col flex justify-center items-center ">
     <div className="text-center">
     </div>
-    <div className="card bg-neutral w-full max-w-sm shrink-0 shadow-2xl">
+    <div className="card bg-neutral p-10 lg:shrink-0 shadow-2xl">
       <div className="card-body">
         <form onSubmit={handleSubmit}>
-           <h1 className="text-3xl font-bold text-primary text-center">Please Login</h1>
+           <h1 className="text-3xl font-bold text-primary dark:text-accent text-center">Please Login</h1>
 
         <fieldset className="fieldset">
           <label  className="label">Email</label>
@@ -104,6 +107,7 @@ const Login = () => {
     </div>
   </div>
 </div>
+  </div>
 
   )
 }

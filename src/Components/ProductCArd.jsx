@@ -23,7 +23,7 @@ const ProductCard = ({products}) => {
     <img
       src={productImage}
       alt={productName}
-      className="h-100 w-full object-cover rounded-t-2xl"
+      className="lg:h-100 w-full object-cover rounded-t-2xl"
     />
 
     {/* Shopping cart icon */}

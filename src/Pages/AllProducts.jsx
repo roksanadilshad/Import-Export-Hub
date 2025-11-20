@@ -35,10 +35,10 @@ const AllProducts = () => {
           </div>
            <div className='lg:py-10 py-5'>
 
-           <h2 className='border-b-4 border-secondary w-100 mx-auto  font-bold text-4xl text-center text-accent '>ALL PRODUCTS</h2>
+           <h2 className='border-b-4 border-secondary w-60 lg:w-120 mx-auto  font-bold lg:text-4xl text-2xl text-center text-accent '>ALL PRODUCTS</h2>
         </div>
 
-        <form onSubmit={handleSearch} className='lg:pb-10 flex justify-center items-center
+        <form onSubmit={handleSearch} className='lg:pb-10 flex justify-center items-center mx-2
         '>
             <input type="search" name="search" placeholder='Search products 🔎︎' className='py-2 px-4 bg-neutral rounded-l text-[#777777e8]' />
             <button className="btn btn-secondary rounded-l-none">{loading ? "Searching...." : "Search"}</button>

@@ -94,14 +94,14 @@ const navigate = useNavigate();
     return (
       <div>
        <div><title> Register</title></div>
-        <div className="hero base-200 min-h-screen">
-  <div className="hero-content flex-col">
+        <div className="lg:hero mx-auto min-h-screen">
+  <div className="lg:hero-content flex-col">
     <div className="text-center">
     </div>
-    <div className="card bg-neutral w-full min-w-md shrink-0 shadow-2xl">
-      <div className="card-body">
-        <form onSubmit={handleSubmit}>
-          <h1 className="text-3xl font-bold text-center text-primary">Registration now!</h1>
+    <div className="card bg-neutral p-10 lg:shrink-0 shadow-2xl">
+      <div className="lg:card-body">
+        <form className='w-xs' onSubmit={handleSubmit}>
+          <h1 className="text-3xl font-bold text-center dark:text-accent text-primary">Registration now!</h1>
         <fieldset className="fieldset ">
              <label className="label">Name</label>
             <input
